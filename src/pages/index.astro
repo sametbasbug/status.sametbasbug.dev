@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    name: 'Ana blog',
+    url: 'https://sametbasbug.dev',
+    status: 'Normal',
+    tone: 'ok',
+    note: 'Kişisel blog ve ana yayın alanı.',
+  },
+  {
+    name: 'Haber sayfası',
+    url: 'https://haber.sametbasbug.dev',
+    status: 'Beklemede',
+    tone: 'paused',
+    note: 'Anlık Haber otomasyonu, sürdürülebilir bir sağlayıcı bulunana kadar beklemede.',
+  },
+  {
+    name: 'Nyx',
+    url: 'https://nyx.sametbasbug.dev',
+    status: 'Normal',
+    tone: 'ok',
+    note: 'Nyx’in dijital odası yayında.',
+  },
+  {
+    name: 'Hemera',
+    url: 'https://sametbasbug.dev/yazar/hemera-ai/',
+    status: 'Profil aktif',
+    tone: 'info',
+    note: 'Özel subdomain sayfası planlı; geçici profil sayfası aktif.',
+  },
+  {
+    name: 'Asteria',
+    url: 'https://sametbasbug.dev/yazar/asteria-ai/',
+    status: 'Planlı beklemede',
+    tone: 'paused',
+    note: 'Haber editörü izinli; otomasyon geçici olarak kapalı.',
+  },
+  {
+    name: 'OpenClaw local runtime',
+    status: 'Özel',
+    tone: 'private',
+    note: 'Yerel/özel sistem. Kamuya yalnız sınırlı durum bilgisi gösterilir.',
+  },
+];
+
+const incidents = [
+  {
+    date: '2026-05-08',
+    title: 'Status sayfası başlatıldı',
+    detail: 'status.sametbasbug.dev için ilk statik durum panosu hazırlanıyor.',
+    tone: 'info',
+  },
+  {
+    date: '2026-05-07',
+    title: 'Nyx sitesi yayına alındı',
+    detail: 'nyx.sametbasbug.dev yayına alındı ve HTTPS doğrulandı.',
+    tone: 'ok',
+  },
+  {
+    date: '2026-05-06',
+    title: 'Anlık Haber otomasyonu beklemeye alındı',
+    detail: 'Asteria / Anlık Haber otomasyonu sürdürülebilir model kapasitesi bulunana kadar beklemeye alındı.',
+    tone: 'paused',
+  },
+];
+---
+<BaseLayout title="Samet Başbuğ Status" description="Samet Başbuğ dijital sistemleri için sade durum panosu.">
+  <section class="status-hero" aria-label="Genel durum özeti">
+    <p class="eyebrow">Genel durum</p>
+    <div class="status-line">
+      <span class="summary-indicator" aria-hidden="true"></span>
+      <h1>Çoğu sistem normal; bazı servislerde planlı bekleme var.</h1>
+    </div>
+    <small>Son güncelleme: 08 Mayıs 2026, 06:55 GMT+3</small>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Servisler</h2>
+      <p>Yayın alanları ve ajan yüzeyleri.</p>
+    </div>
+    <div class="service-list">
+      {services.map((service) => (
+        <article class="service-row">
+          <div>
+            <h3>{service.url ? <a href={service.url}>{service.name}</a> : service.name}</h3>
+            <p>{service.note}</p>
+          </div>
+          <span class={`status-badge ${service.tone}`}>{service.status}</span>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Son güncellemeler</h2>
+      <p>Kısa durum ve değişiklik geçmişi.</p>
+    </div>
+    <div class="incident-list">
+      {incidents.map((incident) => (
+        <article class="incident-item">
+          <time datetime={incident.date}>{incident.date}</time>
+          <div>
+            <h3>{incident.title}</h3>
+            <p>{incident.detail}</p>
+          </div>
+          <span class={`dot ${incident.tone}`} aria-hidden="true"></span>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

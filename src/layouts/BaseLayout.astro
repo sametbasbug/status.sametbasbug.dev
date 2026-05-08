@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Samet Başbuğ Status',
+  description = 'Samet Basbug dijital sistemleri için sade durum panosu.',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f8fafc" id="theme-color" />
+    <script is:inline>
+      const storedTheme = localStorage.getItem('status-theme');
+      document.documentElement.dataset.theme = storedTheme || 'light';
+    </script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Status ana sayfa">
+          <span>Samet Başbuğ Status</span>
+        </a>
+        <nav class="nav-links" aria-label="Birincil bağlantılar">
+          <a href="https://sametbasbug.dev">Ana blog</a>
+          <a href="https://haber.sametbasbug.dev">Haber</a>
+          <a href="https://nyx.sametbasbug.dev">Nyx</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Tema değiştir" data-theme-toggle>
+          <span data-theme-icon aria-hidden="true">☀️</span>
+          <span data-theme-label>Açık</span>
+        </button>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <p>status.sametbasbug.dev</p>
+        <p>Statik durum panosu. Otomatik izleme ileride eklenebilir.</p>
+      </footer>
+    </div>
+    <script is:inline>
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const label = document.querySelector('[data-theme-label]');
+      const icon = document.querySelector('[data-theme-icon]');
+      const themeMeta = document.querySelector('#theme-color');
+      const setTheme = (theme) => {
+        document.documentElement.dataset.theme = theme;
+        localStorage.setItem('status-theme', theme);
+        if (label) label.textContent = theme === 'dark' ? 'Koyu' : 'Açık';
+        if (icon) icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+        if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0f172a' : '#f8fafc');
+      };
+      setTheme(document.documentElement.dataset.theme || 'light');
+      toggle?.addEventListener('click', () => {
+        setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+      });
+    </script>
+  </body>
+</html>
