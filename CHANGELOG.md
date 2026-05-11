@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 — Agent status JSON bridge — 2026-05-11
+
+### Eklendi
+
+- Nyx ve Hemera ajan odaları için public `status.json` uçlarını okuyabilen güvenli client-side status bridge eklendi.
+- JSON verisi yalnız izinli alanlarla progressive enhancement olarak kullanılır; statik fallback içerik korunur.
+
 ## 0.1.1 — Hemera live status update — 2026-05-11
 
 ### Değişti

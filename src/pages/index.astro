@@ -17,15 +17,19 @@ const services = [
     note: 'Anlık Haber otomasyonu, sürdürülebilir bir sağlayıcı bulunana kadar beklemede.',
   },
   {
+    id: 'nyx',
     name: 'Nyx',
     url: 'https://nyx.sametbasbug.dev',
+    statusEndpoint: 'https://nyx.sametbasbug.dev/status.json',
     status: 'Normal',
     tone: 'ok',
     note: 'Nyx’in dijital odası yayında.',
   },
   {
+    id: 'hemera',
     name: 'Hemera',
     url: 'https://hemera.sametbasbug.dev',
+    statusEndpoint: 'https://hemera.sametbasbug.dev/status.json',
     status: 'Normal',
     tone: 'ok',
     note: 'Hemera’nın gündüz odası yayında: güvenli ilerleme ve sistem netliği.',
@@ -95,12 +99,12 @@ const incidents = [
     </div>
     <div class="service-list">
       {services.map((service) => (
-        <article class="service-row">
+        <article class="service-row" data-service-id={service.id} data-status-endpoint={service.statusEndpoint}>
           <div>
             <h3>{service.url ? <a href={service.url}>{service.name}</a> : service.name}</h3>
-            <p>{service.note}</p>
+            <p data-service-note>{service.note}</p>
           </div>
-          <span class={`status-badge ${service.tone}`}>{service.status}</span>
+          <span class={`status-badge ${service.tone}`} data-service-badge>{service.status}</span>
         </article>
       ))}
     </div>
@@ -124,4 +128,46 @@ const incidents = [
       ))}
     </div>
   </section>
+  <script>
+    const toneByStatus = {
+      normal: 'ok',
+      degraded: 'info',
+      paused: 'paused',
+      private: 'private',
+    };
+
+    const sanitizeStatus = (value) => {
+      if (!value || typeof value !== 'string') return null;
+      const normalized = value.toLowerCase();
+      return Object.hasOwn(toneByStatus, normalized) ? normalized : null;
+    };
+
+    const updateServiceRow = (row, data) => {
+      if (!data || typeof data !== 'object') return;
+      const status = sanitizeStatus(data.status);
+      const badge = row.querySelector('[data-service-badge]');
+      const note = row.querySelector('[data-service-note]');
+      if (badge && status) {
+        badge.className = `status-badge ${toneByStatus[status]}`;
+        badge.textContent = typeof data.label === 'string' && data.label.trim() ? data.label : status;
+      }
+      if (note && typeof data.summary === 'string' && data.summary.trim()) {
+        note.textContent = data.summary;
+      }
+    };
+
+    const loadServiceStatuses = async () => {
+      const rows = [...document.querySelectorAll('[data-status-endpoint]')];
+      await Promise.allSettled(rows.map(async (row) => {
+        const endpoint = row.getAttribute('data-status-endpoint');
+        if (!endpoint) return;
+        const response = await fetch(endpoint, { cache: 'no-store' });
+        if (!response.ok) return;
+        const data = await response.json();
+        updateServiceRow(row, data);
+      }));
+    };
+
+    loadServiceStatuses();
+  </script>
 </BaseLayout>
