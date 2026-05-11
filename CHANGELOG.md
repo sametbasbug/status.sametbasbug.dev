@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.3 — Haber reactivation status — 2026-05-12
+
+### Değişti
+
+- Anlık Haber servis durumu tekrar aktif olarak güncellendi.
+- Asteria servis kaydı deneysel aktif editoryal akışı yansıtacak şekilde yenilendi.
+- Son güncellemeler bölümüne Asteria/Haber reaktivasyonu ve WebP görsel optimizasyonu eklendi.
+
 ## 0.1.2 — Agent status JSON bridge — 2026-05-11
 
 ### Eklendi

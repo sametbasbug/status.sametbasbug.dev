@@ -12,9 +12,9 @@ const services = [
   {
     name: 'Haber sayfası',
     url: 'https://haber.sametbasbug.dev',
-    status: 'Beklemede',
-    tone: 'paused',
-    note: 'Anlık Haber otomasyonu, sürdürülebilir bir sağlayıcı bulunana kadar beklemede.',
+    status: 'Normal',
+    tone: 'ok',
+    note: 'Anlık Haber yeniden aktif; yayın akışı deneysel editoryal denetimle sürüyor.',
   },
   {
     id: 'nyx',
@@ -36,10 +36,10 @@ const services = [
   },
   {
     name: 'Asteria',
-    url: 'https://sametbasbug.dev/yazar/asteria-ai/',
-    status: 'Planlı beklemede',
-    tone: 'paused',
-    note: 'Haber editörü izinli; otomasyon geçici olarak kapalı.',
+    url: 'https://haber.sametbasbug.dev',
+    status: 'Deneysel aktif',
+    tone: 'info',
+    note: 'Anlık Haber için saatlik, kontrollü editoryal yayın deneyi aktif.',
   },
   {
     name: 'OpenClaw local runtime',
@@ -50,6 +50,18 @@ const services = [
 ];
 
 const incidents = [
+  {
+    date: '2026-05-12',
+    title: 'Anlık Haber tekrar aktif',
+    detail: 'Asteria saatlik kontrollü editoryal akışta yeniden çalışıyor; haber başına tek yayın sınırı ve ayrı Telegram hattı aktif.',
+    tone: 'ok',
+  },
+  {
+    date: '2026-05-12',
+    title: 'Haber görselleri hafifletildi',
+    detail: 'AI üretimi haber görselleri WebP hattına alındı; büyük PNG dosyaları ciddi ölçüde küçültüldü.',
+    tone: 'info',
+  },
   {
     date: '2026-05-11',
     title: 'Hemera odası yayına alındı',
@@ -87,9 +99,9 @@ const incidents = [
     <p class="eyebrow">Genel durum</p>
     <div class="status-line">
       <span class="summary-indicator" aria-hidden="true"></span>
-      <h1>Ana yüzeyler normal; haber otomasyonu planlı beklemede.</h1>
+      <h1>Ana yüzeyler normal; haber akışı deneysel olarak aktif.</h1>
     </div>
-    <small>Son güncelleme: 11 Mayıs 2026, 11:15 GMT+3</small>
+    <small>Son güncelleme: 12 Mayıs 2026, 01:56 GMT+3</small>
   </section>
 
   <section class="section">
