@@ -29,4 +29,5 @@ npm run preview
 
 - Build çıktısı: `dist/`
 - Hedef domain: `status.sametbasbug.dev`
-- Deploy modeli Nyx/Haber sayfalarıyla aynı GitHub Pages + domain sağlayıcı DNS akışını kullanacak.
+- Deploy modeli Nyx/Haber/Hemera sayfalarıyla aynı GitHub Pages + domain sağlayıcı DNS akışını kullanır.
+- Hemera odası artık canlı servis olarak `https://hemera.sametbasbug.dev` adresine bağlıdır.
