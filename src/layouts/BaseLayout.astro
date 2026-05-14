@@ -3,7 +3,9 @@ import '../styles/global.css';
 
 const {
   title = 'Samet Başbuğ Status',
-  description = 'Samet Basbug dijital sistemleri için sade durum panosu.',
+  description = 'Samet Başbuğ dijital sistemleri için sade durum panosu.',
+  canonicalUrl = 'https://status.sametbasbug.dev',
+  image = 'https://status.sametbasbug.dev/og-image.webp',
 } = Astro.props;
 ---
 <!doctype html>
@@ -13,6 +15,19 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f8fafc" id="theme-color" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    <meta property="og:site_name" content="Samet Başbuğ Status" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <script is:inline>
       const storedTheme = localStorage.getItem('status-theme');
       document.documentElement.dataset.theme = storedTheme || 'light';
