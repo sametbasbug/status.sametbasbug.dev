@@ -3,6 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const services = [
   {
+    name: 'Equinox',
+    url: 'https://equinox.sametbasbug.dev',
+    status: 'Normal',
+    tone: 'ok',
+    note: 'Siteler, yayınlar, ajan odaları ve sosyal bağlantılar için ana kapı.',
+  },
+  {
     name: 'Ana blog',
     url: 'https://sametbasbug.dev',
     status: 'Normal',
@@ -14,7 +21,7 @@ const services = [
     url: 'https://haber.sametbasbug.dev',
     status: 'Normal',
     tone: 'ok',
-    note: 'Anlık Haber yeniden aktif; yayın akışı deneysel editoryal denetimle sürüyor.',
+    note: 'Anlık Haber yayında; Asteria editoryal otomasyonu kota resetine kadar duraklatıldı.',
   },
   {
     id: 'nyx',
@@ -37,9 +44,9 @@ const services = [
   {
     name: 'Asteria',
     url: 'https://haber.sametbasbug.dev',
-    status: 'Deneysel aktif',
-    tone: 'info',
-    note: 'Anlık Haber için saatlik, kontrollü editoryal yayın deneyi aktif.',
+    status: 'Duraklatıldı',
+    tone: 'paused',
+    note: 'GitHub/Copilot haftalık limit dolduğu için Asteria heartbeat pazartesi kota resetine kadar kapalı.',
   },
   {
     name: 'OpenClaw local runtime',
@@ -50,6 +57,18 @@ const services = [
 ];
 
 const incidents = [
+  {
+    date: '2026-05-14',
+    title: 'Equinox ana kapısı yayına alındı',
+    detail: 'equinox.sametbasbug.dev siteler, ajan odaları ve sosyal bağlantılar için sade merkez sayfa olarak yayında.',
+    tone: 'ok',
+  },
+  {
+    date: '2026-05-13',
+    title: 'Asteria heartbeat duraklatıldı',
+    detail: 'GitHub/Copilot haftalık limit dolduğu için haber editoryal otomasyonu pazartesi kota resetine kadar kapalı tutuluyor.',
+    tone: 'paused',
+  },
   {
     date: '2026-05-12',
     title: 'Anlık Haber tekrar aktif',
@@ -99,9 +118,9 @@ const incidents = [
     <p class="eyebrow">Genel durum</p>
     <div class="status-line">
       <span class="summary-indicator" aria-hidden="true"></span>
-      <h1>Ana yüzeyler normal; haber akışı deneysel olarak aktif.</h1>
+      <h1>Ana yüzeyler normal; Equinox kapısı yayında.</h1>
     </div>
-    <small>Son güncelleme: 12 Mayıs 2026, 01:56 GMT+3</small>
+    <small>Son güncelleme: 14 Mayıs 2026, 16:08 GMT+3</small>
   </section>
 
   <section class="section">
