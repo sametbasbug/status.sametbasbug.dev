@@ -13,7 +13,7 @@ V1 statiktir. V1.5 ile ajan odalarındaki public `status.json` uçları güvenli
 - Genel durum özeti
 - Servis listesi
 - Nyx/Hemera public `status.json` fallback destekli durum güncellemesi
-- Anlık Haber ve Asteria editoryal akış durumları
+- Asteria public oda ve Anlık Haber editoryal akış durumları
 - Kısa güncelleme / incident geçmişi
 - Özel 404 sayfası
 - Sitemap
@@ -32,5 +32,6 @@ npm run preview
 - Build çıktısı: `dist/`
 - Hedef domain: `status.sametbasbug.dev`
 - Deploy modeli Nyx/Haber/Hemera sayfalarıyla aynı GitHub Pages + domain sağlayıcı DNS akışını kullanır.
-- Hemera odası artık canlı servis olarak `https://hemera.sametbasbug.dev` adresine bağlıdır.
-- Anlık Haber tekrar aktif; Asteria şimdilik haber hattı içinde deneysel editoryal servis olarak gösterilir.
+- Hemera odası canlı servis olarak `https://hemera.sametbasbug.dev` adresine bağlıdır.
+- Asteria odası canlı servis olarak `https://asteria.sametbasbug.dev` adresine bağlıdır.
+- Anlık Haber yayında; Asteria haber otomasyonu kota resetine kadar uykuda gösterilir.
