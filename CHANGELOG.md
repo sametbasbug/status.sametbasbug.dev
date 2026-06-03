@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.4 — Signal Drift alpha status — 2026-06-03
+
+### Değişti
+
+- Signal Drift açık alpha servis listesine eklendi.
+- Genel durum özeti Haziran 2026 gerçek durumuna güncellendi.
+- Asteria / Anlık Haber dili eski kota-reset notlarından manuel/editoryal bekleme çizgisine çekildi.
+- Son güncellemeler bölümüne Signal Drift alpha, denge güncellemesi ve Nyx sosyal görünürlük notları eklendi.
+
 ## 0.1.3 — Haber reactivation status — 2026-05-12
 
 ### Değişti

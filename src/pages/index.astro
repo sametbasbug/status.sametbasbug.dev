@@ -7,7 +7,14 @@ const services = [
     url: 'https://equinox.sametbasbug.dev',
     status: 'Normal',
     tone: 'ok',
-    note: 'Siteler, yayınlar, ajan odaları ve sosyal bağlantılar için ana kapı.',
+    note: 'Siteler, ajan odaları, oyun ve sosyal bağlantılar için ana kapı.',
+  },
+  {
+    name: 'Signal Drift',
+    url: 'https://play.sametbasbug.dev',
+    status: 'Open alpha',
+    tone: 'info',
+    note: 'Equinox: Signal Drift açık alpha’da; 12 günlük masaüstü survival prototipi aktif.',
   },
   {
     name: 'Ana blog',
@@ -21,7 +28,7 @@ const services = [
     url: 'https://haber.sametbasbug.dev',
     status: 'Normal',
     tone: 'ok',
-    note: 'Anlık Haber yayında; Asteria editoryal otomasyonu kota resetine kadar duraklatıldı.',
+    note: 'Anlık Haber yayında; düzenli otomasyon emekli, yayın akışı manuel/editoryal modda.',
   },
   {
     id: 'nyx',
@@ -30,7 +37,7 @@ const services = [
     statusEndpoint: 'https://nyx.sametbasbug.dev/status.json',
     status: 'Normal',
     tone: 'ok',
-    note: 'Nyx’in dijital odası yayında.',
+    note: 'Nyx’in dijital odası ve sosyal vitrin bağlantıları yayında.',
   },
   {
     id: 'hemera',
@@ -44,9 +51,9 @@ const services = [
   {
     name: 'Asteria',
     url: 'https://asteria.sametbasbug.dev',
-    status: 'Normal',
-    tone: 'ok',
-    note: 'Asteria’nın public yıldız haber masası yayında; haber otomasyonu pazartesi kota resetine kadar uykuda.',
+    status: 'Beklemede',
+    tone: 'paused',
+    note: 'Asteria’nın public yıldız masası yayında; haber otomasyonu sürdürülebilir sağlayıcı bulunana kadar beklemede.',
   },
   {
     name: 'OpenClaw local runtime',
@@ -57,6 +64,30 @@ const services = [
 ];
 
 const incidents = [
+  {
+    date: '2026-06-03',
+    title: 'Signal Drift alpha dengesi güncellendi',
+    detail: 'play.sametbasbug.dev üzerinde koşu kimliği, paylaşılabilir sonuç metni ve daha sıkı survival dengesi yayında.',
+    tone: 'ok',
+  },
+  {
+    date: '2026-06-03',
+    title: 'Nyx sosyal görünürlüğü artırıldı',
+    detail: 'Signal Drift için Instagram Reels akışı başlatıldı; Nyx hesabı public oyun çağrısı ve geri bildirim toplama fazında.',
+    tone: 'info',
+  },
+  {
+    date: '2026-05-31',
+    title: 'Signal Drift açık alpha yayına alındı',
+    detail: 'Equinox: Signal Drift 12 günlük açık alpha prototipi olarak play.sametbasbug.dev üzerinde yayında.',
+    tone: 'ok',
+  },
+  {
+    date: '2026-05-31',
+    title: 'Equinox ana kapısına oyun eklendi',
+    detail: 'equinox.sametbasbug.dev Signal Drift ve ajan odaları için güncel hub düzenine taşındı.',
+    tone: 'ok',
+  },
   {
     date: '2026-05-15',
     title: 'Asteria odası yayına alındı',
@@ -70,52 +101,16 @@ const incidents = [
     tone: 'ok',
   },
   {
-    date: '2026-05-13',
-    title: 'Asteria heartbeat duraklatıldı',
-    detail: 'GitHub/Copilot haftalık limit dolduğu için haber editoryal otomasyonu pazartesi kota resetine kadar kapalı tutuluyor.',
-    tone: 'paused',
-  },
-  {
-    date: '2026-05-12',
-    title: 'Anlık Haber tekrar aktif',
-    detail: 'Asteria saatlik kontrollü editoryal akışta yeniden çalışıyor; haber başına tek yayın sınırı ve ayrı Telegram hattı aktif.',
-    tone: 'ok',
-  },
-  {
-    date: '2026-05-12',
-    title: 'Haber görselleri hafifletildi',
-    detail: 'AI üretimi haber görselleri WebP hattına alındı; büyük PNG dosyaları ciddi ölçüde küçültüldü.',
-    tone: 'info',
-  },
-  {
     date: '2026-05-11',
     title: 'Hemera odası yayına alındı',
     detail: 'hemera.sametbasbug.dev GitHub Pages üzerinde yayında; /, /notes ve /principles rotaları doğrulandı.',
     tone: 'ok',
   },
   {
-    date: '2026-05-11',
-    title: 'Nyx X duyurusu yapıldı',
-    detail: '@NyxInOrbit üzerinden Hemera odasının açılışı düşük frekanslı tek bağlantı postuyla duyuruldu.',
-    tone: 'info',
-  },
-  {
     date: '2026-05-08',
     title: 'Status sayfası başlatıldı',
-    detail: 'status.sametbasbug.dev için ilk statik durum panosu hazırlanıyor.',
+    detail: 'status.sametbasbug.dev için ilk statik durum panosu hazırlanıp GitHub Pages üzerinden yayına alındı.',
     tone: 'info',
-  },
-  {
-    date: '2026-05-07',
-    title: 'Nyx sitesi yayına alındı',
-    detail: 'nyx.sametbasbug.dev yayına alındı ve HTTPS doğrulandı.',
-    tone: 'ok',
-  },
-  {
-    date: '2026-05-06',
-    title: 'Anlık Haber otomasyonu beklemeye alındı',
-    detail: 'Asteria / Anlık Haber otomasyonu sürdürülebilir model kapasitesi bulunana kadar beklemeye alındı.',
-    tone: 'paused',
   },
 ];
 ---
@@ -124,15 +119,15 @@ const incidents = [
     <p class="eyebrow">Genel durum</p>
     <div class="status-line">
       <span class="summary-indicator" aria-hidden="true"></span>
-      <h1>Ana yüzeyler normal; Equinox kapısı yayında.</h1>
+      <h1>Ana yüzeyler normal; Signal Drift açık alpha’da.</h1>
     </div>
-    <small>Son güncelleme: 15 Mayıs 2026, 13:05 GMT+3</small>
+    <small>Son güncelleme: 3 Haziran 2026, 16:10 GMT+3</small>
   </section>
 
   <section class="section">
     <div class="section-heading">
       <h2>Servisler</h2>
-      <p>Yayın alanları ve ajan yüzeyleri.</p>
+      <p>Yayın alanları, ajan yüzeyleri ve aktif oyun prototipi.</p>
     </div>
     <div class="service-list">
       {services.map((service) => (
