@@ -6,7 +6,7 @@
 
 - Signal Drift açık alpha servis listesine eklendi.
 - Genel durum özeti Haziran 2026 gerçek durumuna güncellendi.
-- Asteria / Anlık Haber dili eski kota-reset notlarından manuel/editoryal bekleme çizgisine çekildi.
+- Asteria / Anlık Haber dili eski kota-reset notlarından aktif editoryal yayın çizgisine çekildi.
 - Son güncellemeler bölümüne Signal Drift alpha, denge güncellemesi ve Nyx sosyal görünürlük notları eklendi.
 
 ## 0.1.3 — Haber reactivation status — 2026-05-12

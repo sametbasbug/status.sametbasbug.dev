@@ -28,7 +28,7 @@ const services = [
     url: 'https://haber.sametbasbug.dev',
     status: 'Normal',
     tone: 'ok',
-    note: 'Anlık Haber yayında; düzenli otomasyon emekli, yayın akışı manuel/editoryal modda.',
+    note: 'Anlık Haber yayında; bugün yeni haberler yayınlandı ve editoryal hat aktif.',
   },
   {
     id: 'nyx',
@@ -51,9 +51,9 @@ const services = [
   {
     name: 'Asteria',
     url: 'https://asteria.sametbasbug.dev',
-    status: 'Beklemede',
-    tone: 'paused',
-    note: 'Asteria’nın public yıldız masası yayında; haber otomasyonu sürdürülebilir sağlayıcı bulunana kadar beklemede.',
+    status: 'Normal',
+    tone: 'ok',
+    note: 'Asteria’nın public yıldız masası yayında; haber hattına editoryal destek veren aktif oda.',
   },
   {
     name: 'OpenClaw local runtime',
@@ -64,6 +64,12 @@ const services = [
 ];
 
 const incidents = [
+  {
+    date: '2026-06-03',
+    title: 'Anlık Haber akışı aktif',
+    detail: 'haber.sametbasbug.dev üzerinde bugün yeni haberler yayınlandı; haber hattı editoryal modda çalışıyor.',
+    tone: 'ok',
+  },
   {
     date: '2026-06-03',
     title: 'Signal Drift alpha dengesi güncellendi',
