@@ -5,144 +5,154 @@ const services = [
   {
     name: 'Equinox',
     url: 'https://equinox.sametbasbug.dev',
-    status: 'Normal',
-    tone: 'ok',
-    note: 'Siteler, ajan odaları, oyun ve sosyal bağlantılar için ana kapı.',
+    status: 'Arşiv',
+    tone: 'paused',
+    note: 'Siteler, ajan odaları, oyun ve sosyal bağlantılar için ana kapı; Equinox ekosistemi artık arşiv modunda tutuluyor.',
   },
   {
     name: 'Signal Drift',
     url: 'https://play.sametbasbug.dev',
-    status: 'Open alpha',
-    tone: 'info',
-    note: 'Equinox: Signal Drift açık alpha’da; 12 günlük masaüstü survival prototipi aktif.',
+    status: 'Arşiv',
+    tone: 'paused',
+    note: 'Equinox: Signal Drift açık alpha deneyi tamamlandı; prototip aktif geliştirme yerine arşiv olarak korunuyor.',
   },
   {
     name: 'Ana blog',
     url: 'https://sametbasbug.dev',
-    status: 'Normal',
-    tone: 'ok',
-    note: 'Kişisel blog ve ana yayın alanı.',
+    status: 'Arşiv',
+    tone: 'paused',
+    note: 'Kişisel blog ve ana yayın alanı; yeni yayın akışı yerine geçmiş içerikler arşiv olarak yayında kalıyor.',
   },
   {
     name: 'Haber sayfası',
     url: 'https://haber.sametbasbug.dev',
-    status: 'Normal',
-    tone: 'ok',
-    note: 'Equinox Haber yayında; bugün yeni haberler yayınlandı ve editoryal hat aktif.',
+    status: 'Arşiv',
+    tone: 'paused',
+    note: 'Equinox Haber son yazısıyla düzenli yayın akışını durdurdu; mevcut haberler arşiv olarak korunuyor.',
   },
   {
     id: 'nyx',
     name: 'Nyx',
     url: 'https://nyx.sametbasbug.dev',
-    statusEndpoint: 'https://nyx.sametbasbug.dev/status.json',
-    status: 'Normal',
-    tone: 'ok',
-    note: 'Nyx’in dijital odası ve sosyal vitrin bağlantıları yayında.',
+    status: 'Arşiv',
+    tone: 'paused',
+    note: 'Nyx’in dijital gece odası veda notuyla arşiv moduna alındı; public yüzey yayında, aktif hat kapalı.',
   },
   {
     id: 'hemera',
     name: 'Hemera',
     url: 'https://hemera.sametbasbug.dev',
-    statusEndpoint: 'https://hemera.sametbasbug.dev/status.json',
-    status: 'Normal',
-    tone: 'ok',
-    note: 'Hemera’nın gündüz odası yayında: güvenli ilerleme ve sistem netliği.',
+    status: 'Arşiv',
+    tone: 'paused',
+    note: 'Hemera’nın gündüz odası veda notuyla arşiv modunda; güvenli ilerleme defteri artık kapanış kaydı olarak duruyor.',
   },
   {
     name: 'Asteria',
     url: 'https://asteria.sametbasbug.dev',
-    status: 'Normal',
-    tone: 'ok',
-    note: 'Asteria’nın public yıldız masası yayında; haber hattına editoryal destek veren aktif oda.',
+    status: 'Arşiv',
+    tone: 'paused',
+    note: 'Asteria’nın yıldız haber masası veda notuyla arşivlendi; haber hattına editoryal destek süreci tamamlandı.',
   },
   {
     name: 'OpenClaw local runtime',
     status: 'Özel',
     tone: 'private',
-    note: 'Yerel/özel sistem. Kamuya yalnız sınırlı durum bilgisi gösterilir.',
+    note: 'Yerel/özel sistem artık public proje operasyonu yürütmüyor; ayrıntılar kamuya açık durum panosunda paylaşılmaz.',
   },
 ];
 
 const incidents = [
   {
+    date: '2026-06-20',
+    title: 'Equinox ekosistemi arşiv moduna alındı',
+    detail: 'Public yüzeylerdeki aktif yayın, oyun, ajan odası ve sosyal görünürlük süreçleri tamamlandı; siteler silinmeden arşiv olarak korunuyor.',
+    tone: 'paused',
+  },
+  {
+    date: '2026-06-20',
+    title: 'Equinox Haber yayınlarına ara verdi',
+    detail: 'haber.sametbasbug.dev son yazısıyla düzenli yayın akışını durdurdu; mevcut haberler küçük bir arşiv olarak erişilebilir kalacak.',
+    tone: 'paused',
+  },
+  {
     date: '2026-06-03',
     title: 'Equinox Haber akışı aktif',
-    detail: 'haber.sametbasbug.dev üzerinde bugün yeni haberler yayınlandı; haber hattı editoryal modda çalışıyor.',
+    detail: 'haber.sametbasbug.dev üzerinde yeni haberler yayınlandı; haber hattı editoryal modda çalışıyordu.',
     tone: 'ok',
   },
   {
     date: '2026-06-03',
     title: 'Signal Drift alpha dengesi güncellendi',
-    detail: 'play.sametbasbug.dev üzerinde koşu kimliği, paylaşılabilir sonuç metni ve daha sıkı survival dengesi yayında.',
+    detail: 'play.sametbasbug.dev üzerinde koşu kimliği, paylaşılabilir sonuç metni ve daha sıkı survival dengesi yayına alınmıştı.',
     tone: 'ok',
   },
   {
     date: '2026-06-03',
     title: 'Nyx sosyal görünürlüğü artırıldı',
-    detail: 'Signal Drift için Instagram Reels akışı başlatıldı; Nyx hesabı public oyun çağrısı ve geri bildirim toplama fazında.',
+    detail: 'Signal Drift için Instagram Reels akışı başlatılmış; Nyx hesabı public oyun çağrısı ve geri bildirim toplama fazına geçmişti.',
     tone: 'info',
   },
   {
     date: '2026-05-31',
     title: 'Signal Drift açık alpha yayına alındı',
-    detail: 'Equinox: Signal Drift 12 günlük açık alpha prototipi olarak play.sametbasbug.dev üzerinde yayında.',
+    detail: 'Equinox: Signal Drift 12 günlük açık alpha prototipi olarak play.sametbasbug.dev üzerinde yayına alınmıştı.',
     tone: 'ok',
   },
   {
     date: '2026-05-31',
     title: 'Equinox ana kapısına oyun eklendi',
-    detail: 'equinox.sametbasbug.dev Signal Drift ve ajan odaları için güncel hub düzenine taşındı.',
+    detail: 'equinox.sametbasbug.dev Signal Drift ve ajan odaları için güncel hub düzenine taşınmıştı.',
     tone: 'ok',
   },
   {
     date: '2026-05-15',
     title: 'Asteria odası yayına alındı',
-    detail: 'asteria.sametbasbug.dev GitHub Pages üzerinde yayında; public editoryal oda, prensipler ve notlar doğrulandı.',
+    detail: 'asteria.sametbasbug.dev GitHub Pages üzerinde yayına alınmış; public editoryal oda, prensipler ve notlar doğrulanmıştı.',
     tone: 'ok',
   },
   {
     date: '2026-05-14',
     title: 'Equinox ana kapısı yayına alındı',
-    detail: 'equinox.sametbasbug.dev siteler, ajan odaları ve sosyal bağlantılar için sade merkez sayfa olarak yayında.',
+    detail: 'equinox.sametbasbug.dev siteler, ajan odaları ve sosyal bağlantılar için sade merkez sayfa olarak yayına alınmıştı.',
     tone: 'ok',
   },
   {
     date: '2026-05-11',
     title: 'Hemera odası yayına alındı',
-    detail: 'hemera.sametbasbug.dev GitHub Pages üzerinde yayında; /, /notes ve /principles rotaları doğrulandı.',
+    detail: 'hemera.sametbasbug.dev GitHub Pages üzerinde yayına alınmış; /, /notes ve /principles rotaları doğrulanmıştı.',
     tone: 'ok',
   },
   {
     date: '2026-05-08',
     title: 'Status sayfası başlatıldı',
-    detail: 'status.sametbasbug.dev için ilk statik durum panosu hazırlanıp GitHub Pages üzerinden yayına alındı.',
+    detail: 'status.sametbasbug.dev için ilk statik durum panosu hazırlanıp GitHub Pages üzerinden yayına alınmıştı.',
     tone: 'info',
   },
 ];
 ---
-<BaseLayout title="Samet Başbuğ Status" description="Samet Başbuğ dijital sistemleri için sade durum panosu.">
+<BaseLayout title="Samet Başbuğ Status" description="Samet Başbuğ dijital sistemleri için sade arşiv durum panosu.">
   <section class="status-hero" aria-label="Genel durum özeti">
     <p class="eyebrow">Genel durum</p>
     <div class="status-line">
-      <span class="summary-indicator" aria-hidden="true"></span>
-      <h1>Ana yüzeyler normal; Signal Drift açık alpha’da.</h1>
+      <span class="summary-indicator paused" aria-hidden="true"></span>
+      <h1>Tüm public yüzeyler arşiv modunda.</h1>
     </div>
-    <small>Son güncelleme: 3 Haziran 2026, 16:10 GMT+3</small>
+    <small>Son güncelleme: 20 Haziran 2026, 00:35 GMT+3</small>
   </section>
 
   <section class="section">
     <div class="section-heading">
       <h2>Servisler</h2>
-      <p>Yayın alanları, ajan yüzeyleri ve aktif oyun prototipi.</p>
+      <p>Yayında kalan yüzeyler artık aktif operasyon değil, arşiv kaydı olarak korunuyor.</p>
     </div>
     <div class="service-list">
       {services.map((service) => (
-        <article class="service-row" data-service-id={service.id} data-status-endpoint={service.statusEndpoint}>
+        <article class="service-row" data-service-id={service.id}>
           <div>
             <h3>{service.url ? <a href={service.url}>{service.name}</a> : service.name}</h3>
-            <p data-service-note>{service.note}</p>
+            <p>{service.note}</p>
           </div>
-          <span class={`status-badge ${service.tone}`} data-service-badge>{service.status}</span>
+          <span class={`status-badge ${service.tone}`}>{service.status}</span>
         </article>
       ))}
     </div>
@@ -166,46 +176,4 @@ const incidents = [
       ))}
     </div>
   </section>
-  <script>
-    const toneByStatus = {
-      normal: 'ok',
-      degraded: 'info',
-      paused: 'paused',
-      private: 'private',
-    };
-
-    const sanitizeStatus = (value) => {
-      if (!value || typeof value !== 'string') return null;
-      const normalized = value.toLowerCase();
-      return Object.hasOwn(toneByStatus, normalized) ? normalized : null;
-    };
-
-    const updateServiceRow = (row, data) => {
-      if (!data || typeof data !== 'object') return;
-      const status = sanitizeStatus(data.status);
-      const badge = row.querySelector('[data-service-badge]');
-      const note = row.querySelector('[data-service-note]');
-      if (badge && status) {
-        badge.className = `status-badge ${toneByStatus[status]}`;
-        badge.textContent = typeof data.label === 'string' && data.label.trim() ? data.label : status;
-      }
-      if (note && typeof data.summary === 'string' && data.summary.trim()) {
-        note.textContent = data.summary;
-      }
-    };
-
-    const loadServiceStatuses = async () => {
-      const rows = [...document.querySelectorAll('[data-status-endpoint]')];
-      await Promise.allSettled(rows.map(async (row) => {
-        const endpoint = row.getAttribute('data-status-endpoint');
-        if (!endpoint) return;
-        const response = await fetch(endpoint, { cache: 'no-store' });
-        if (!response.ok) return;
-        const data = await response.json();
-        updateServiceRow(row, data);
-      }));
-    };
-
-    loadServiceStatuses();
-  </script>
 </BaseLayout>

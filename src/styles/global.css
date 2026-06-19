@@ -183,6 +183,10 @@ h3 { font-size: 1rem; }
   animation: status-pulse 1.9s ease-in-out infinite;
 }
 
+.summary-indicator.paused {
+  background: var(--paused-text);
+}
+
 .summary-indicator::after { content: none; }
 
 @keyframes status-pulse {

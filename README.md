@@ -1,20 +1,19 @@
 # status.sametbasbug.dev
 
-Samet Basbug dijital sistemleri için sade, statik durum panosu.
+Samet Başbuğ dijital sistemleri için sade, statik arşiv durum panosu.
 
 ## V1 yaklaşımı
 
 Bu proje büyük şirket status sayfaları gibi sade ve öz tutulur. Nyx sayfası gibi karakter odaklı değildir; güvenilir bir kontrol panosu hissi vermelidir.
 
-V1 statiktir. V1.5 ile ajan odalarındaki public `status.json` uçları güvenli progressive enhancement olarak okunabilir. Otomatik monitoring, ping geçmişi ve incident otomasyonu V2 konusudur.
+Final arşiv durumunda sayfa, aktif operasyon göstergesi değil; Equinox ekosistemindeki public yüzeylerin silinmeden arşiv olarak korunduğunu anlatan merkezi kayıt olarak davranır.
 
 ## İçerik
 
-- Genel durum özeti
-- Servis listesi
-- Nyx/Hemera public `status.json` fallback destekli durum güncellemesi
-- Asteria public oda, aktif Equinox Haber editoryal hattı ve Signal Drift open alpha durumu
-- Kısa güncelleme / incident geçmişi
+- Genel arşiv durumu özeti
+- Yayında kalan public yüzeylerin arşiv durumları
+- OpenClaw local runtime için yalnız sınırlı/özel kamu bilgisi
+- Kısa güncelleme / kapanış geçmişi
 - Özel 404 sayfası
 - Sitemap
 
@@ -32,7 +31,6 @@ npm run preview
 - Build çıktısı: `dist/`
 - Hedef domain: `status.sametbasbug.dev`
 - Deploy modeli Nyx/Haber/Hemera sayfalarıyla aynı GitHub Pages + domain sağlayıcı DNS akışını kullanır.
-- Hemera odası canlı servis olarak `https://hemera.sametbasbug.dev` adresine bağlıdır.
-- Asteria odası canlı servis olarak `https://asteria.sametbasbug.dev` adresine bağlıdır.
-- Signal Drift açık alpha `https://play.sametbasbug.dev` üzerinden izlenir.
-- Equinox Haber yayında; haber hattı aktif editoryal modda gösterilir.
+- Bu sayfa kapanış zincirinin sonunda güncellenen merkezi arşiv durum kaydıdır.
+- Nyx/Hemera `status.json` progressive enhancement yolu kaldırıldı; final durumda merkezi status metni override edilmemelidir.
+- Equinox, Signal Drift, Ana blog, Equinox Haber, Nyx, Hemera ve Asteria public yüzeyleri aktif operasyon yerine arşiv olarak gösterilir.
