@@ -1,15 +1,5 @@
 # Changelog
 
-## 0.1.5 — Final archive status — 2026-06-20
-
-### Değişti
-
-- Genel durum özeti tüm public yüzeylerin arşiv moduna alındığını gösterecek şekilde güncellendi.
-- Equinox, Signal Drift, Ana blog, Equinox Haber, Nyx, Hemera ve Asteria servis kayıtları aktif operasyon yerine arşiv durumu olarak yenilendi.
-- Son güncellemeler bölümüne Equinox ekosistemi arşiv modu ve Equinox Haber kapanış kaydı eklendi.
-- Nyx/Hemera public `status.json` progressive enhancement yolu kaldırıldı; final arşiv durumunda merkezi status metni override edilmez.
-- README, status sayfasının kapanış zincirindeki merkezi arşiv kaydı rolünü açıklayacak şekilde güncellendi.
-
 ## 0.1.4 — Signal Drift alpha status — 2026-06-03
 
 ### Değişti
