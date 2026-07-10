@@ -2,8 +2,8 @@
 import '../styles/global.css';
 
 const {
-  title = 'Samet Başbuğ Status',
-  description = 'Samet Başbuğ dijital sistemleri için sade durum panosu.',
+  title = 'Equinox Status',
+  description = 'Equinox ürünleri ve çalışma hatları için sade durum panosu.',
   canonicalUrl = 'https://status.sametbasbug.dev',
   image = 'https://status.sametbasbug.dev/og-image.webp',
 } = Astro.props;
@@ -23,7 +23,7 @@ const {
     <meta property="og:image" content={image} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="675" />
-    <meta property="og:site_name" content="Samet Başbuğ Status" />
+    <meta property="og:site_name" content="Equinox Status" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -41,15 +41,14 @@ const {
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="/" aria-label="Status ana sayfa">
-          <span>Samet Başbuğ Status</span>
+          <span>Equinox Status</span>
         </a>
         <nav class="nav-links" aria-label="Birincil bağlantılar">
           <a href="https://equinox.sametbasbug.dev">Equinox</a>
+          <a href="https://orbit.sametbasbug.dev">Orbit</a>
           <a href="https://sametbasbug.dev">Ana blog</a>
           <a href="https://haber.sametbasbug.dev">Haber</a>
-          <a href="https://nyx.sametbasbug.dev">Nyx</a>
-          <a href="https://hemera.sametbasbug.dev">Hemera</a>
-          <a href="https://asteria.sametbasbug.dev">Asteria</a>
+          <a href="https://play.sametbasbug.dev">Signal Drift</a>
         </nav>
         <button class="theme-toggle" type="button" aria-label="Tema değiştir" data-theme-toggle>
           <span data-theme-icon aria-hidden="true">☀️</span>
