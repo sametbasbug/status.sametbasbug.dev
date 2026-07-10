@@ -1,20 +1,32 @@
 # status.sametbasbug.dev
 
-Samet Basbug dijital sistemleri için sade, statik durum panosu.
+Equinox ürünleri ve çalışma hatları için sade, statik durum panosu.
 
-## V1 yaklaşımı
+## Yaklaşım
 
-Bu proje büyük şirket status sayfaları gibi sade ve öz tutulur. Nyx sayfası gibi karakter odaklı değildir; güvenilir bir kontrol panosu hissi vermelidir.
+Bu proje büyük şirket status sayfaları gibi sade ve öz tutulur. Karakter sitesi veya ürün vitrini değildir; kamusal yüzeylerin erişilebilirliğini ve önemli çalışma hattı durumlarını tek yerde gösterir.
 
-V1 statiktir. V1.5 ile ajan odalarındaki public `status.json` uçları güvenli progressive enhancement olarak okunabilir. Otomatik monitoring, ping geçmişi ve incident otomasyonu V2 konusudur.
+Sayfa statiktir. Durumlar doğrulanıp bilinçli olarak güncellenir; kaldırılmış servislerden veri çekmez ve çalışmayan otomasyonları canlıymış gibi göstermez. Otomatik monitoring, ping geçmişi ve incident otomasyonu ileride ayrı bir geliştirme konusu olabilir.
+
+## İzlenen yüzeyler
+
+- **Equinox** — ekosistemin ana kapısı
+- **Equinox Orbit** — Nyx, Hemera ve Asteria’nın ortak kamusal akışı
+- **Ana blog** — kişisel yayın, sözlük ve içerik merkezi
+- **Equinox Haber** — haber yüzeyi ve yayın arşivi
+- **Signal Drift** — açık alpha oyun prototipi
+- **Asteria yayın otomasyonu** — kamusal siteden ayrı izlenen çalışma hattı
+- **Equinox ajan çalışma ortamı** — yalnız sınırlı bilgi gösterilen özel sistem
+
+Ayrı Nyx, Hemera ve Asteria web odaları 10 Temmuz 2026 tarihinde emekliye ayrıldı. Ajanların ortak kamusal yüzeyi artık `orbit.sametbasbug.dev` adresidir.
 
 ## İçerik
 
 - Genel durum özeti
-- Servis listesi
-- Nyx/Hemera public `status.json` fallback destekli durum güncellemesi
-- Asteria public oda, aktif Equinox Haber editoryal hattı ve Signal Drift open alpha durumu
-- Kısa güncelleme / incident geçmişi
+- Kamusal servis listesi
+- Duraklatılmış ve özel çalışma hatları
+- Kısa değişiklik / incident geçmişi
+- Açık ve koyu tema
 - Özel 404 sayfası
 - Sitemap
 
@@ -27,12 +39,12 @@ npm run build
 npm run preview
 ```
 
-## Notlar
+## Teknik notlar
 
 - Build çıktısı: `dist/`
 - Hedef domain: `status.sametbasbug.dev`
-- Deploy modeli Nyx/Haber/Hemera sayfalarıyla aynı GitHub Pages + domain sağlayıcı DNS akışını kullanır.
-- Hemera odası canlı servis olarak `https://hemera.sametbasbug.dev` adresine bağlıdır.
-- Asteria odası canlı servis olarak `https://asteria.sametbasbug.dev` adresine bağlıdır.
-- Signal Drift açık alpha `https://play.sametbasbug.dev` üzerinden izlenir.
-- Equinox Haber yayında; haber hattı aktif editoryal modda gösterilir.
+- Deploy modeli: GitHub Pages + özel domain
+- Ana kapı: `https://equinox.sametbasbug.dev`
+- Ortak ajan akışı: `https://orbit.sametbasbug.dev`
+- Haber yüzeyi: `https://haber.sametbasbug.dev`
+- Oyun yüzeyi: `https://play.sametbasbug.dev`
