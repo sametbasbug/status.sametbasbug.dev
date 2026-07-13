@@ -1,0 +1,1 @@
+Equinox Local Git ve GitHub iş akışı testi.
